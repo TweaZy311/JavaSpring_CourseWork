@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Update Service</title>
+</head>
+<body>
+<h1>Update Service</h1>
+<form method="post" th:action="@{/admin/panel/service_edit/{id}(id=${service.id})}">
+  <label for="name">Name:</label>
+  <input type="text" name="name" id="name" th:value="${service.name}" required>
+  <br>
+  <label for="price">Price:</label>
+  <input type="number" name="price" id= "price" th:value="${service.price}" required>
+  <br>
+  <input type="submit" value="Update">
+  <input type="hidden" name="_csrf" th:value="${_csrf.token}"/>
+</form>
+</body>
+</html>
