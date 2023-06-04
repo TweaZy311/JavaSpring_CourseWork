@@ -25,25 +25,21 @@ public class Application {
     @Column(name = "date")
     private String date;
 
-    @Column(name = "name")
-    private String name;
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     @JsonIgnore
     public User user;
 
-//    @OneToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "service_name")
-//    @JsonIgnore
-//    public Service service;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "service_id")
+    @JsonIgnore
+    public Service service;
 
     @Override
     public String toString() {
         return "Application{" +
                 "id=" + id +
                 ", date=" + date +
-                ", name='" + name + '\'' +
                 '}';
     }
 }

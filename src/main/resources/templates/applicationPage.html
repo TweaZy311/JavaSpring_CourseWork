@@ -41,9 +41,10 @@
                 <div class="form-group">
                     <label for="service">Услуга:</label>
                     <select id="service" name="service" class="form-control form-control-lg" required>
-                        <th:block th:each="services : ${services}">
-                            <option th:type="text" th:value="${services.name}" th:text="${services.name}"></option>
-                        </th:block>
+                        <option th:each="service : ${services}"
+                                th:type="text"
+                                th:value="${service.id}"
+                                th:text="${service.name}"></option>
                     </select>
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">Отправить</button>

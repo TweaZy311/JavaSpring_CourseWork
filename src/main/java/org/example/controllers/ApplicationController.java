@@ -45,12 +45,14 @@ public class ApplicationController {
                                     Principal principal) {
         String username = principal.getName();
         User existingUser = userService.findByUsername(username);
+
         application.setUser(existingUser);
+
         applicationService.saveApplication(application);
         emailService.sendEmail(existingUser.getUsername(),
                 "Созданная заявка",
                 "Уважаемый " + existingUser.getFirstName() + " " + existingUser.getLastName() +
-                ", ваша заявка под номером " + application.getId() + " на услугу " + application.getName() +
+                ", ваша заявка под номером " + application.getId() + " на услугу " + application.getService().getName() +
                 " на следующую дату: " + application.getDate() + " была принята. Ожидаем вас в указанный день!");
         return "redirect:/application";
     }

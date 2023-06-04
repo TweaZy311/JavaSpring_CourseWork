@@ -35,7 +35,7 @@ public class Service {
 
     @Override
     public String toString() {
-        return "Bank{" +
+        return "Service{" +
                 "id=" + id +
                 ", name='" + name +
                 ", price='" + price +
