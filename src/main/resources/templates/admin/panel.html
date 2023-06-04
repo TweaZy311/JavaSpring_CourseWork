@@ -44,7 +44,7 @@
             <tbody>
             <tr th:each="applications : ${Applications}">
                 <th th:text="${applications.getId()}"></th>
-                <td th:text="${applications.getName()}"></td>
+                <td th:text="${applications.getService().getName()}"></td>
                 <td th:text="${applications.getDate()}"></td>
                 <td th:text="${applications.getUser().getUsername()}"></td>
             </tr>
