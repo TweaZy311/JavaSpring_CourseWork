@@ -2,19 +2,39 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Update Service</title>
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <title>Редактировать услугу</title>
 </head>
 <body>
-<h1>Update Service</h1>
-<form method="post" th:action="@{/admin/panel/service_edit/{id}(id=${service.id})}">
-  <label for="name">Name:</label>
-  <input type="text" name="name" id="name" th:value="${service.name}" required>
-  <br>
-  <label for="price">Price:</label>
-  <input type="number" name="price" id= "price" th:value="${service.price}" required>
-  <br>
-  <input type="submit" value="Изменить">
-  <input type="hidden" name="_csrf" th:value="${_csrf.token}"/>
-</form>
+<h1>Редактировать услугу</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <form method="post" th:action="@{/admin/panel/service_edit/{id}(id=${service.id})}">
+        <div class="form-group">
+          <label for="name">Название:</label>
+          <input type="text" name="name" id="name" class="form-control form-control-lg" th:value="${service.name}" required>
+        </div>
+        <div class="form-group">
+          <label for="price">Цена:</label>
+          <input type="text" name="price" id= "price" class="form-control form-control-lg" th:value="${service.price}" required>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary btn-block">Обновить</button>
+        <input type="hidden" name="_csrf" th:value="${_csrf.token}"/>
+      </form>
+    </div>
+  </div>
+</div>
 </body>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
 </html>
