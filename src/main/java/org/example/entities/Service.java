@@ -27,12 +27,18 @@ public class Service {
     @Column(name = "price")
     private Integer price;
 
-    @OneToMany(mappedBy = "service")
-    private List<Application> applications;
 
+
+
+//    @OneToMany(mappedBy = "service")
+//    private List<Card> cards;
 
     @Override
     public String toString() {
-        return name;
+        return "Service{" +
+                "id=" + id +
+                ", name='" + name +
+                ", price='" + price +
+                "}\n";
     }
 }

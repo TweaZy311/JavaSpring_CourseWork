@@ -77,5 +77,14 @@ public class AdminController {
         serviceService.add(existingService);
         return "redirect:/admin/panel";
     }
+//
+//    @DeleteMapping("/panel")
+//    public String deleteService(@RequestParam(required = false) Integer id) {
+//        Optional<Service> optionalService = serviceService.findById(id);
+//        if (optionalService.isPresent()){
+//            serviceService.deleteById(id);
+//        }
+//        return "redirect:/admin/panel";
+//    }
 
 }
