@@ -30,7 +30,7 @@ public class Application {
     @JsonIgnore
     public User user;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "service_id")
     @JsonIgnore
     public Service service;
